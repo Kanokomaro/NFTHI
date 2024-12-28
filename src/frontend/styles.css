@@ -1,0 +1,298 @@
+/* Estilos Globais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Alterando a fonte global para uma mais agradável */
+body {
+  font-family: 'Poppins', sans-serif; /* Usando a fonte Poppins */
+  background-color: #121212; /* Cor de fundo escuro */
+  color: #fff; /* Texto branco */
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  flex-direction: column; /* Adicionado para permitir uma estrutura flexível no layout */
+}
+
+/* Importando a fonte Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* Contêiner Principal */
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%; /* Garantindo que o container ocupe toda a altura */
+}
+
+/* Menu Lateral */
+.sidebar {
+  background-color: #1e1e1e; /* Cor escura para o menu */
+  width: 0;
+  transition: width 0.3s ease;
+  overflow-x: hidden;
+  padding-top: 20px;
+  border-radius: 10px; /* Bordas arredondadas */
+}
+
+.sidebar.active {
+  width: 250px; /* Largura do menu quando ativo */
+}
+
+.toggle-btn {
+  background-color: #1e1e1e;
+  color: #fff;
+  border: none;
+  font-size: 14px; /* Botão de hambúrguer um pouco menor */
+  cursor: pointer;
+  padding: 5px; /* Botão menor */
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  border-radius: 5px; /* Bordas arredondadas para o botão */
+  transition: transform 0.2s ease;
+}
+
+.toggle-btn:hover {
+  background-color: #444; /* Cor de fundo no hover */
+  transform: scale(1.1); /* Efeito de aumento ao passar o mouse */
+}
+
+.menu-content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.menu-content h2 {
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 20px; /* Fonte menor para o nome "Menu" */
+  padding-left: 20px; /* Ajustando o nome "Menu" para a direita */
+}
+
+.menu-content button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 8px;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 5px; /* Bordas arredondadas para os botões */
+  font-size: 14px; /* Fonte menor para os botões */
+  transition: background-color 0.3s ease;
+}
+
+.menu-content button:hover {
+  background-color: #444;
+}
+
+/* Conteúdo Principal */
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+  margin-left: 0; /* Ajuste do conteúdo para não sobrepor o menu */
+}
+
+/* Barra de pesquisa */
+input#collectionSearch {
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 5px;
+  box-sizing: border-box; /* Para garantir que a largura total inclua o padding */
+}
+
+/* Estilo para o grid de coleções */
+.nft-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Largura menor para os cards */
+  gap: 15px;
+  margin-top: 20px;
+  max-height: 80vh; /* Definindo uma altura máxima para o grid */
+  overflow-y: auto; /* Adicionando rolagem vertical */
+  padding-right: 10px; /* Para dar um espaço de segurança */
+}
+
+/* Estilo para os cards de coleções */
+.nft-card {
+  background-color: #222; /* Fundo escuro para os cards */
+  border-radius: 8px; /* Bordas arredondadas */
+  overflow: hidden;
+  text-align: center;
+  padding: 8px; /* Padding reduzido */
+  font-size: 12px; /* Fonte menor */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para os cards */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease; /* Adicionando transições suaves */
+  height: 180px; /* Reduzindo ainda mais a altura dos cards */
+  width: 100%; /* Largura do card adaptável ao container */
+  max-width: 150px; /* Largura máxima menor */
+  opacity: 0.95; /* Tornando o card ligeiramente transparente */
+}
+
+.nft-card img {
+  width: 100%;
+  height: 100px; /* Altura reduzida para as imagens */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.nft-card p {
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.nft-card:hover {
+  transform: scale(1.05); /* Aumento suave ao passar o mouse */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Aumentando a sombra ao passar o mouse */
+  opacity: 1; /* Removendo a opacidade para uma aparência mais forte no hover */
+}
+
+/* Estilo para a forma de chave privada */
+.private-key-form {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.private-key-form input {
+  padding: 8px; /* Caixa de input menor */
+  font-size: 14px; /* Fonte menor no campo de entrada */
+  margin-bottom: 10px;
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 5px; /* Bordas arredondadas para o campo de entrada */
+}
+
+.private-key-form button {
+  padding: 8px 16px; /* Botão menor */
+  background-color: #4a504a;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px; /* Bordas arredondadas para o botão */
+  font-size: 14px; /* Fonte menor no botão */
+}
+
+.private-key-form button:hover {
+  background-color: #4a504a;
+}
+
+/* Estilo para a rolagem do grid */
+.nft-grid::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.nft-grid::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.nft-grid::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.nft-grid::-webkit-scrollbar-track {
+  background-color: #333;
+  border-radius: 10px;
+}
+
+.nft-grid:hover::-webkit-scrollbar {
+  opacity: 1;
+}
+
+.nft-grid::-webkit-scrollbar {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Responsividade - Ajustando a largura do grid para telas menores */
+@media (max-width: 768px) {
+  .nft-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+
+  .nft-card {
+    font-size: 14px; /* Aumentando o tamanho da fonte para melhor legibilidade em telas pequenas */
+  }
+
+  .sidebar {
+    width: 200px; /* Ajustando a largura do menu para telas pequenas */
+  }
+
+  .toggle-btn {
+    font-size: 16px; /* Ajustando o tamanho do botão */
+    padding: 8px; /* Ajustando o padding do botão */
+  }
+}
+
+/* Ajustando o grid de coleções e NFTs */
+@media (max-width: 480px) {
+  .nft-card {
+    font-size: 16px; /* Aumentando o tamanho da fonte para uma melhor legibilidade em telas pequenas */
+    padding: 12px; /* Ajustando o padding para telas menores */
+  }
+}
+/* Loading Spinner */
+.loading-spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1000;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Collection Info */
+.collection-info {
+  padding: 8px;
+}
+
+.collection-name {
+  font-weight: bold;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.collection-stats {
+  font-size: 0.9em;
+  color: #888;
+}
+
+/* Error Message */
+.error-message {
+  color: #ff6b6b;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(255, 107, 107, 0.1);
+  border-radius: 8px;
+  margin: 20px 0;
+}

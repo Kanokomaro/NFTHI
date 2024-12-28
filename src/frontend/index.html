@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NFT Monitor</title>
+  <script defer src="./renderer.js"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Menu Lateral -->
+    <div id="sidebar" class="sidebar">
+      <button id="toggleMenuButton" class="toggle-btn">☰</button>
+      <div id="menuContent" class="menu-content">
+        <h2>Menu</h2>
+        <button id="homeButton">Home</button>
+        <button id="addPrivateKeyButton">Adicionar Chave Privada</button>
+      </div>
+    </div>
+
+    <!-- Área Principal -->
+    <div class="main-content">
+      <h1 id="pageTitle">Coleções</h1>
+      <!-- Barra de pesquisa -->
+      <input type="text" id="collectionSearch" placeholder="Procure por coleção..." class="search-input" />
+      <div id="collectionsGrid" class="nft-grid"></div>
+      
+      <!-- Formulário de chave privada -->
+      <div id="privateKeyForm" class="private-key-form" style="display: none;">
+        <input id="privateKey" type="password" placeholder="Insira sua chave privada" />
+        <button id="fetchWalletNFTs">Obter NFTs da Carteira</button>
+        <div id="walletNFTs" class="nft-grid"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
